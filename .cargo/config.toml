@@ -1,0 +1,3 @@
+[alias]
+# Release build with the console hidden: target\release\folio.exe
+ship = "build --release"

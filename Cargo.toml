@@ -1,0 +1,33 @@
+[package]
+name = "folio"
+version = "0.1.0"
+edition = "2024"
+description = "Windows app that turns a folder of audiobook files into a tagged M4B with chapters"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/EKO-GITHUB/folio"
+
+[dependencies]
+anyhow = "1.0.104"
+dirs = "7.0.0"
+eframe = { version = "0.36.2", default-features = false, features = ["accesskit", "default_fonts", "glow", "persistence"] }
+egui_extras = { version = "0.36.2", default-features = false, features = ["image", "http"] }
+encoding_rs = "0.8.42"
+image = { version = "0.25.10", default-features = false, features = ["jpeg", "png"] }
+mp4ameta = "0.13.0"
+natord = "1.0.9"
+regex = "1.13.1"
+reqwest = { version = "0.13.5", default-features = false, features = ["blocking", "json", "query", "native-tls", "charset", "http2"] }
+rfd = "0.17.2"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.151"
+zip = { version = "8.6.0", default-features = false, features = ["deflate"] }
+
+[build-dependencies]
+winresource = "0.1.31"
+
+[profile.release]
+strip = true
+
+[dev-dependencies]
+egui_kittest = { version = "0.36.2", features = ["wgpu", "snapshot"] }
+ttf-parser = "0.25.1"
